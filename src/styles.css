@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: #0f0f1a;
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-violet-400 to-blue-400 bg-clip-text text-transparent;
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+  backdrop-filter: blur(14px);
+}
+
+.btn-primary {
+  @apply rounded-xl bg-gradient-to-r from-violet-500 to-blue-500 px-4 py-2 text-sm font-semibold text-white transition hover:scale-[1.03] hover:opacity-95;
+}
+
+.btn-secondary {
+  @apply rounded-xl border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:scale-[1.03] hover:bg-white/10;
+}
+
+.input {
+  @apply rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500;
+}
+
+.section-title {
+  @apply mb-6 font-heading text-3xl font-bold;
+}
