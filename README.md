@@ -6,35 +6,40 @@ Premium, high-converting freelance portfolio built with:
 - TypeScript
 - Tailwind CSS
 
-## Quick start
+## Quick start (local preview)
 
 ```bash
-# 1) clone/open repo
+# 1) open project
 cd /workspaces/Karthik-Web-Solutions
 
-# 2) ensure you are on the branch that contains the website files
-# (if you're on main and package.json is missing)
-git branch
-git checkout work
-
-# 3) install dependencies
+# 2) install dependencies
 npm install
 
-# 4) run dev server
+# 3) start preview server
 npm run dev
 ```
 
-Then open the local Vite URL (usually `http://localhost:5173`).
+Open the Vite URL shown in terminal (usually `http://localhost:5173`).
 
-## Why you saw `ENOENT: ... package.json`
+## If you get `ENOENT: ... package.json`
 
-That error means the current folder does not contain the project files yet. In your logs, you were on `main`, while the project files were committed on branch `work` in this environment.
-
-If needed, merge the branch into `main`:
+You are running commands in a folder/branch that does not contain this project.
 
 ```bash
-git checkout main
-git merge work
+# verify you're in the repo root
+pwd
+ls -la
+
+# verify branch and recent commits
+git branch --show-current
+git log --oneline -n 3
 ```
 
-After that, `package.json` will be available on `main` and `npm install` should work (assuming network access to npm is allowed).
+You should see files like `package.json`, `index.html`, and `src/` in the current directory.
+
+## Build for production
+
+```bash
+npm run build
+npm run preview
+```
